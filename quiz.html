@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mean's Portfolio — Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Mean's<span> Portfolio</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="interest.html">Interests</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="game.html" class="nav-cta">Play Game 🏓</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <ul class="nav-mobile">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="interest.html">Interests</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="game.html">Play Game 🏓</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-hero">
+    <div class="blob" style="width:320px;height:320px;top:-80px;right:-60px;opacity:.5;"></div>
+    <div class="blob" style="width:180px;height:180px;bottom:-50px;left:8%;opacity:.4;"></div>
+    <div class="container page-hero-content">
+      <p class="section-label">Get to Know Me</p>
+      <h1 class="section-title">Personal Life Quiz 💖</h1>
+      <p class="section-sub; about-text">Test how well you know me through fun questions about my hobbies, interests, dreams, favorite things, and personality.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="quiz-wrap" id="quiz-container">
+        <div class="quiz-card" id="quiz-question-card">
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quiz-progress" style="width:0%"></div>
+          </div>
+
+          <div class="quiz-meta">
+            <span class="quiz-q-num" id="quiz-q-num">Question 1 of 8</span>
+            <span class="quiz-score-live" id="quiz-score-live">Score: 0</span>
+          </div>
+
+          <h2 class="quiz-question" id="quiz-question-text">Loading question…</h2>
+
+          <div class="quiz-options" id="quiz-options"></div>
+
+          <div id="quiz-feedback"></div>
+
+          <div class="quiz-nav">
+            <button class="btn btn-primary" id="quiz-next-btn" onclick="nextQuestion()" style="display:none">
+              Next Question →
+            </button>
+          </div>
+        </div>
+
+        <div class="quiz-card" id="quiz-result">
+          <div class="result-emoji" id="result-emoji">🌸</div>
+          <h2 id="result-title">You Know Me So Well!</h2>
+          <div class="result-score-big" id="result-score-big">0/8</div>
+          <p style="font-size:1rem; color:var(--gray-400); font-weight:600;" id="result-pct"> 0% Friendship Score 💖 </p>
+          <p class="result-msg" id="result-msg">Thanks for taking time to know me better!</p>
+          <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+            <button class="btn btn-primary" onclick="restartQuiz()">💖 Try Again</button>
+            <a href="game.html" class="btn btn-outline">🏓 Play a Game</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="score-table-wrap fade-up" style="margin-top:32px; padding:28px 32px;">
+
+        <h3 style="margin-bottom:10px;">
+          💖 How Well Do You Know Me?
+        </h3>
+
+        <p style="
+          color:var(--gray-400);
+          font-size:.95rem;
+          margin-bottom:18px;
+          line-height:1.6;
+        ">
+          Review your answers and discover how much you learned about my personality, interests, dreams, and favorite things.
+        </p>
+
+        <div style="overflow-x:auto;">
+          <table class="fancy-table">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Question</th>
+                <th>Your Answer</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody id="score-tbody">
+              <tr>
+                <td colspan="4"
+                    style="
+                      text-align:center;
+                      color:var(--gray-400);
+                      padding:18px;
+                    ">
+                  No attempts yet. Complete the quiz above! ✨
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="cta-banner fade-up">
+        <h2>Thanks for Getting to Know Me 💖</h2>
+        <p>Continue exploring my portfolio, discover my hobbies and interests, or challenge yourself in my fun table tennis game!</p>
+        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+          <a href="game.html"  class="btn btn-white">🏓 Play My Game</a>
+          <a href="about.html" class="btn btn-white">🌸 Know Me More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Mean's<span> Portfolio</span></a>
+          <p>A personal portfolio that showcases my journey, passions, creativity, and growth through web design and interactive experiences created with dedication, inspiration, and love.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/maryanne.gonzales.5876/" title="Facebook">f</a>
+            <a href="#" title="Twitter">𝕏</a>
+            <a href="https://www.instagram.com/_whtdhck" title="Instagram">📷</a>
+            <a href="#" title="GitHub">⌥</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="interest.html">Interests</a>
+          <a href="quiz.html">Quiz</a>
+          <a href="game.html">Game</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="https://www.w3schools.com" target="_blank" rel="noopener">W3Schools</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Mean's Portfolio. Crafted with passion, purpose, and love💖.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mean's Portfolio — Table Tennis Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Mean's<span> Portfolio</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="interest.html">Interests</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="game.html" class="nav-cta">Play Game 🏓</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <ul class="nav-mobile">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="interest.html">Interests</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="game.html">Play Game 🏓</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-hero">
+    <div class="blob" style="width:320px;height:320px;top:-80px;right:-60px;opacity:.5;"></div>
+    <div class="blob" style="width:180px;height:180px;bottom:-50px;left:8%;opacity:.4;"></div>
+    <div class="container page-hero-content">
+      <p class="section-label">Mini Game</p>
+      <h1 class="section-title">🏓 Table Tennis</h1>
+      <p class="section-sub; about-text">Play against the AI! First to 11 points wins. Move your mouse or touch the court to control your paddle.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 40px;">
+    <div class="container">
+      <div class="game-wrap">
+
+        <div class="game-header-bar">
+          <h2>🏓 Table Tennis Challenge</h2>
+
+          <div class="scoreboard">
+            <div class="score-block">
+              <span class="score-num" id="player-score">0</span>
+              <p class="score-lbl">You</p>
+            </div>
+            <div class="score-divider">:</div>
+            <div class="score-block">
+              <span class="score-num" id="ai-score">0</span>
+              <p class="score-lbl">AI</p>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+            <button id="hit-btn" class="btn btn-primary" onclick="startGame()">
+              ▶ Start Game
+            </button>
+            <button class="btn btn-outline" onclick="startGame()">
+              🔄 Restart
+            </button>
+            <button class="btn btn-outline" onclick="pauseGame()">
+              ⏸ Pause
+            </button>
+
+            <button class="btn btn-outline" onclick="stopGame()">
+              ⏹ Stop
+</button>
+          </div>
+        </div>
+
+        <div id="game-canvas-wrap" style="position:relative;">
+
+          <canvas id="game-canvas"></canvas>
+
+          <div class="game-overlay" id="game-overlay" style="display:flex;">
+            <h3 id="overlay-title">🏓 Table Tennis</h3>
+            <p id="overlay-msg">
+              Move your mouse to control the <strong>left paddle</strong>.
+              First to <strong>11 points</strong> wins! Use keyboard arrows too.
+            </p>
+            <button class="btn btn-primary" style="font-size:1.1rem; padding:16px 40px;" onclick="startGame()">
+              ▶ Start Playing
+            </button>
+          </div>
+        </div>
+
+        <div class="game-instructions">
+          <div class="game-instr-item">
+            <div class="instr-icon">🖱️</div>
+            <span>Move mouse to control your paddle</span>
+          </div>
+          <div class="game-instr-item">
+            <div class="instr-icon">⌨️</div>
+            <span>Arrow keys or W/S to move</span>
+          </div>
+          <div class="game-instr-item">
+            <div class="instr-icon">🏆</div>
+            <span>First to 11 points wins!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <p class="section-label fade-up">Game Rules</p>
+      <h2 class="section-title fade-up">How to Play Table Tennis?</h2>
+
+      <div class="fade-up" style="overflow-x:auto;">
+        <table class="fancy-table">
+          <thead>
+            <tr>
+              <th>Rule</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🏓 Objective</td>
+              <td>Hit the ball with your paddle to score points. Don't let it pass you on the left!</td>
+            </tr>
+            <tr>
+              <td>🖱️ Controls</td>
+              <td>Move your mouse up/down over the canvas. Use Arrow Up / Arrow Down keys or W/S on keyboard.</td>
+            </tr>
+            <tr>
+              <td>🤖 AI Opponent</td>
+              <td>The AI controls the right paddle and tracks the ball automatically. It can make mistakes!</td>
+            </tr>
+            <tr>
+              <td>🎯 Scoring</td>
+              <td>You score when the ball passes the AI paddle on the right side. AI scores when it passes you.</td>
+            </tr>
+            <tr>
+              <td>🏆 Winning</td>
+              <td>The first player to reach 11 points wins the match. Click Restart to play again.</td>
+            </tr>
+            <tr>
+              <td>⚡ Speed</td>
+              <td>The ball gradually speeds up with each paddle hit, making the game more challenging!</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="cta-banner fade-up">
+      <h2>Thanks for Playing 🏓</h2>
+      <p>
+        Hope you enjoyed my table tennis game! Continue exploring my portfolio and get to know more about my interests, dreams, and personality.
+      </p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="quiz.html" class="btn btn-white">
+          💖 Take My Quiz
+        </a>
+        <a href="about.html" class="btn btn-white">
+          🌸 Know Me More
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Mean's<span> Portfolio</span></a>
+          <p>A personal portfolio that showcases my journey, passions, creativity, and growth through web design and interactive experiences created with dedication, inspiration, and love.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/maryanne.gonzales.5876/" title="Facebook">f</a>
+            <a href="#" title="Twitter">𝕏</a>
+            <a href="https://www.instagram.com/_whtdhck" title="Instagram">📷</a>
+            <a href="#" title="GitHub">⌥</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="interest.html">Interests</a>
+          <a href="quiz.html">Quiz</a>
+          <a href="game.html">Game</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="https://www.w3schools.com" target="_blank" rel="noopener">W3Schools</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Mean's Portfolio. Crafted with passion, purpose, and love💖.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
